@@ -21,6 +21,8 @@
     behaviors {
         tap-hold:
 
+        tap-hold:
+
         tap-hold {
             :tap-hold
 
