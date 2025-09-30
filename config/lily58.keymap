@@ -18,6 +18,23 @@
         };
     };
 
+    behaviors {
+        tap-hold:
+
+        tap-hold {
+            :tap-hold
+
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP-HOLD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,11 +48,11 @@
 
             display-name = "Base";
             bindings = <
-&trans          &trans  &trans  &trans        &trans            &trans                                                  &trans             &trans  &trans     &trans   &trans    &trans
-&kp TAB         &kp Q   &kp W   &kp E         &kp R             &kp T                                                   &kp Y              &kp U   &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp ESCAPE      &kp A   &kp S   &kp D         &kp F             &kp G                                                   &kp H              &kp J   &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LEFT_SHIFT  &kp Z   &kp X   &kp C         &kp V             &kp B             &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &kp N              &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
-                                &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_COMMAND  &mo 1                &kp SPACE        &kp RIGHT_COMMAND  &mo 2   &none
+&trans                       &trans  &trans  &trans        &trans            &trans                                                  &trans             &trans  &trans     &trans   &trans    &trans
+&kp TAB                      &kp Q   &kp W   &kp E         &kp R             &kp T                                                   &kp Y              &kp U   &kp I      &kp O    &kp P     &kp BACKSPACE
+&tap-hold LEFT_SHIFT ESCAPE  &kp A   &kp S   &kp D         &kp F             &kp G                                                   &kp H              &kp J   &kp K      &kp L    &kp SEMI  &tap-hold ENTER SQT
+&kp LEFT_SHIFT               &kp Z   &kp X   &kp C         &kp V             &kp B             &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &kp N              &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
+                                             &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_COMMAND  &mo 1                &kp SPACE        &kp RIGHT_COMMAND  &mo 2   &none
             >;
         };
 
