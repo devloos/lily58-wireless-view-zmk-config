@@ -19,10 +19,6 @@
     };
 
     behaviors {
-        tap-hold:
-
-        tap-hold:
-
         new_behavior: new_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR";
